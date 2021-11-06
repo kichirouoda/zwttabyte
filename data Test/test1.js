@@ -64,7 +64,11 @@ const sessions = [
 
 function result(sessions) {
   // Your Code Here
-  console.log(sessions.toString());
+  sessions.forEach(element => {
+    console.log(element);
+  });
+  
+  //console.log(sessions.toString());
 }
 
 console.log(result(sessions));
