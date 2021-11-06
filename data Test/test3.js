@@ -15,8 +15,17 @@ const data = [
 
 function result(data) {
   // Your Code Here
-  var filtered = data.filter(e => e != null);
-  return filtered
+  const removeEmptyOrNull = (obj) => {
+    Object.keys(obj).forEach(k =>
+      (obj[k] && typeof obj[k] === 'object') && removeEmptyOrNull(obj[k]) ||
+      (!obj[k] && obj[k] !== undefined) && delete obj[k]
+    );
+    return obj;
+  };
+  myObj2 = removeEmptyOrNull(data);
+  return myObj2
+  //console.log(myObj2);
+
 }
 
 console.log(result(data));
